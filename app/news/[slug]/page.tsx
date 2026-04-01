@@ -9,7 +9,7 @@ interface NewsPageProps {
 }
 
 export function generateStaticParams() {
-  return newsData.slice(0, 5).map((news) => ({
+  return newsData.map((news) => ({
     slug: news.slug,
   }))
 }
