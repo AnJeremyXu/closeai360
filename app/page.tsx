@@ -1,53 +1,99 @@
+'use client'
+
+import { useState } from 'react'
 import { NewsCard } from '@/components/news-card'
-import { newsData } from '@/data/news'
-import Link from 'next/link'
+import { todayNews, historyNews } from '@/data/news'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function Home() {
-  // 分离新闻和AI实践
-  const news = newsData.filter(item => item.category !== 'AI实践').slice(0, 5)
-  const practices = newsData.filter(item => item.category === 'AI实践').slice(0, 5)
+  const [showHistory, setShowHistory] = useState(false)
+  
+  // 获取当前日期
+  const today = new Date()
+  const dateStr = `${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日`
+  
+  // 历史新闻按阅读量排序，取前100
+  const sortedHistoryNews = [...historyNews]
+    .sort((a, b) => (b.views || 0) - (a.views || 0))
+    .slice(0, 100)
 
   return (
-    <div className="max-w-2xl mx-auto px-4">
-      {/* 网站标题 */}
-      <header className="py-12 text-center">
-        <h1 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-2 tracking-tight">
-          CloseAI 360
-        </h1>
-        <p className="text-gray-500 dark:text-gray-500 text-base">
-          AI & 科技新闻 · AI实践场景
+    <div className="max-w-3xl mx-auto px-4">
+      {/* 顶部导航 */}
+      <header className="py-8 border-b border-gray-100">
+        <div className="flex items-center justify-between">
+          <h1 className="text-xl font-semibold text-gray-900">
+            CloseAI 360
+          </h1>
+          <span className="text-sm text-gray-500">{dateStr}</span>
+        </div>
+        <p className="mt-2 text-sm text-gray-500">
+          每日精选 AI & 科技资讯
         </p>
       </header>
 
-      {/* 新闻板块 */}
-      <section className="mb-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-medium text-gray-900 dark:text-white">最新资讯</h2>
-          <span className="text-sm text-gray-400 dark:text-gray-600">{news.length} 篇</span>
+      {/* 今日新闻 */}
+      <section className="py-6">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-lg font-medium text-gray-900">今日热点</h2>
+          <span className="text-sm text-gray-400">{todayNews.length} 篇</span>
         </div>
-        <div className="divide-y divide-gray-100 dark:divide-gray-800">
-          {news.map((item) => (
-            <NewsCard key={item.id} news={item} />
+        <div className="divide-y divide-gray-100">
+          {todayNews.map((news, index) => (
+            <NewsCard 
+              key={news.id} 
+              news={news} 
+              index={index}
+              showRank={true}
+            />
           ))}
         </div>
       </section>
 
-      {/* AI实践板块 */}
-      <section className="mb-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-medium text-gray-900 dark:text-white">AI实践场景</h2>
-          <span className="text-sm text-gray-400 dark:text-gray-600">{practices.length} 篇</span>
-        </div>
-        <div className="divide-y divide-gray-100 dark:divide-gray-800">
-          {practices.map((item) => (
-            <NewsCard key={item.id} news={item} />
-          ))}
-        </div>
+      {/* 查看更多 */}
+      <section className="py-4 border-t border-gray-100">
+        <button
+          onClick={() => setShowHistory(!showHistory)}
+          className="w-full py-3 flex items-center justify-center gap-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+        >
+          {showHistory ? (
+            <>
+              <ChevronUp className="w-4 h-4" />
+              收起历史新闻
+            </>
+          ) : (
+            <>
+              <ChevronDown className="w-4 h-4" />
+              查看更多历史热门（Top 100）
+            </>
+          )}
+        </button>
+        
+        {/* 历史新闻列表 */}
+        {showHistory && (
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg font-medium text-gray-900">历史热门</h2>
+              <span className="text-sm text-gray-400">Top 100</span>
+            </div>
+            <div className="divide-y divide-gray-100">
+              {sortedHistoryNews.map((news, index) => (
+                <NewsCard 
+                  key={news.id} 
+                  news={news} 
+                  index={index}
+                  showRank={true}
+                  isHistory={true}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </section>
 
       {/* 页脚 */}
-      <footer className="py-8 text-center text-sm text-gray-400 dark:text-gray-600 border-t border-gray-100 dark:border-gray-800">
-        <p>© 2026 CloseAI 360</p>
+      <footer className="py-8 text-center text-sm text-gray-400 border-t border-gray-100">
+        <p>© 2026 CloseAI 360 · 每日更新 AI & 科技资讯</p>
       </footer>
     </div>
   )

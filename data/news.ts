@@ -9,211 +9,201 @@ export interface NewsItem {
   readTime: string
   author: string
   tags: string[]
+  views?: number
+  publishTime?: string
+  url?: string
 }
 
-export const newsData: NewsItem[] = [
+// 今日新闻（10条）
+export const todayNews: NewsItem[] = [
+  {
+    "id": "1775644101",
+    "slug": "news-20260409-1",
+    "title": "OpenAI GPT-5 技术深度解析：多模态推理的范式转移",
+    "summary": "GPT-5 不仅是一次版本迭代，更代表了从语言模型向世界模型演进的关键节点，其多模态原生架构正在重新定义人机交互的边界。",
+    "content": "",
+    "category": "AI",
+    "date": "2026-04-09",
+    "readTime": "8 分钟",
+    "author": "CloseAI 深度分析",
+    "tags": ["OpenAI", "GPT-5", "多模态"],
+    "views": 12580,
+    "publishTime": "08:00",
+    "url": "https://openai.com/blog"
+  },
+  {
+    "id": "1775644102",
+    "slug": "news-20260409-2",
+    "title": "DeepSeek-R1 推理模型开源：中国 AI 的技术平权实验",
+    "summary": "DeepSeek-R1 以 MIT 许可证开源，性能对标 OpenAI o1，但真正的颠覆性在于其训练成本仅为同类模型的 1/10。",
+    "content": "",
+    "category": "AI",
+    "date": "2026-04-09",
+    "readTime": "9 分钟",
+    "author": "CloseAI 深度分析",
+    "tags": ["DeepSeek", "开源", "推理模型"],
+    "views": 8965,
+    "publishTime": "08:30",
+    "url": "https://deepseek.com"
+  },
+  {
+    "id": "1775644103",
+    "slug": "news-20260409-3",
+    "title": "AI 智能体 (Agent) 爆发前夜：从聊天到做事的临界点",
+    "summary": "2026 年被业界称为 Agent 元年，但真正的突破不在于技术能力，而在于信任机制的建立。",
+    "content": "",
+    "category": "AI",
+    "date": "2026-04-09",
+    "readTime": "10 分钟",
+    "author": "CloseAI 深度分析",
+    "tags": ["AI Agent", "智能体", "自动化"],
+    "views": 15234,
+    "publishTime": "09:00",
+    "url": "https://www.anthropic.com"
+  },
+  {
+    "id": "1775644104",
+    "slug": "news-20260409-4",
+    "title": "欧盟 AI 法案生效：全球监管格局的分水岭",
+    "summary": "作为全球首部综合性 AI 监管法律，EU AI Act 不仅规范了欧洲市场，更通过布鲁塞尔效应影响着全球 AI 产业。",
+    "content": "",
+    "category": "科技",
+    "date": "2026-04-09",
+    "readTime": "11 分钟",
+    "author": "CloseAI 深度分析",
+    "tags": ["欧盟AI法案", "监管", "合规"],
+    "views": 7823,
+    "publishTime": "09:30",
+    "url": "https://digital-strategy.ec.europa.eu"
+  },
+  {
+    "id": "1775644105",
+    "slug": "news-20260409-5",
+    "title": "端侧 AI 的崛起：从云端到边缘的算力迁移",
+    "summary": "随着模型压缩技术和专用芯片的进步，AI 推理正在从云端向终端设备迁移。",
+    "content": "",
+    "category": "科技",
+    "date": "2026-04-09",
+    "readTime": "10 分钟",
+    "author": "CloseAI 深度分析",
+    "tags": ["端侧AI", "边缘计算", "NPU"],
+    "views": 6890,
+    "publishTime": "10:00",
+    "url": "https://www.qualcomm.com"
+  },
   {
     "id": "1775644106",
-    "slug": "news-20260409-1",
+    "slug": "news-20260409-6",
     "title": "YouTube 十大热门 AI 话题盘点：2026年最受关注的人工智能趋势",
     "summary": "从 GPT-5 到 AI Agent，从人形机器人到视频生成，梳理 YouTube 上最火的 10 个 AI 话题，附视频链接直达精彩内容。",
-    "content": `## YouTube 上最火的 10 个 AI 话题
-
-以下是 2026 年 YouTube 上最受关注的 AI 话题，按热度排序：
-
----
-
-### 1. GPT-5 / 下一代大模型发布
-OpenAI 下一代模型的预测和泄露持续引发热议，多模态原生架构成为焦点。
-
-🔥 **热门视频搜索**: [GPT-5 predictions 2026](https://www.youtube.com/results?search_query=GPT-5+predictions+2026)
-
-📺 **推荐频道**: AI Explained, The AI Advantage
-
----
-
-### 2. AI Agent 自主代理
-AutoGPT、Devin 等自主编程代理展示 AI 独立完成复杂任务的能力。
-
-🔥 **热门视频搜索**: [AI Agent tutorial 2026](https://www.youtube.com/results?search_query=AI+Agent+tutorial+2026)
-
-📺 **推荐频道**: The AI Advantage, Matt Wolfe
-
----
-
-### 3. Sora 视频生成
-OpenAI Sora 的惊人视频生成能力，与 Runway、Pika 等工具的对比评测。
-
-🔥 **热门视频搜索**: [Sora AI video examples](https://www.youtube.com/results?search_query=Sora+AI+video+examples)
-
-📺 **推荐频道**: Two Minute Papers, AI Explained
-
----
-
-### 4. 人形机器人
-Figure AI、Tesla Optimus、Boston Dynamics 的最新进展。
-
-🔥 **热门视频搜索**: [Humanoid robot 2026](https://www.youtube.com/results?search_query=Humanoid+robot+2026)
-
-📺 **推荐频道**: ColdFusion, Lex Fridman
-
----
-
-### 5. Claude 3.7 / Anthropic 新功能
-Claude 的代码能力和推理能力展示，与 GPT-4 的对比评测。
-
-🔥 **热门视频搜索**: [Claude 3.7 vs GPT-4](https://www.youtube.com/results?search_query=Claude+3.7+vs+GPT-4)
-
-📺 **推荐频道**: AI Explained, The AI Advantage
-
----
-
-### 6. Gemini 2.5 Pro
-Google 最新多模态模型的突破，长上下文窗口（100万+ token）。
-
-🔥 **热门视频搜索**: [Gemini 2.5 Pro test](https://www.youtube.com/results?search_query=Gemini+2.5+Pro+test)
-
-📺 **推荐频道**: Matt Wolfe, AI Explained
-
----
-
-### 7. AI 编程助手
-Cursor、GitHub Copilot、Windsurf 等工具的实际使用评测。
-
-🔥 **热门视频搜索**: [Cursor AI tutorial](https://www.youtube.com/results?search_query=Cursor+AI+tutorial)
-
-📺 **推荐频道**: The AI Advantage, Fireship
-
----
-
-### 8. AI 音乐生成
-Suno、Udio 等音乐生成工具的评测和教程。
-
-🔥 **热门视频搜索**: [Suno AI music tutorial](https://www.youtube.com/results?search_query=Suno+AI+music+tutorial)
-
-📺 **推荐频道**: Matt Wolfe, AI Explained
-
----
-
-### 9. AI 硬件设备
-Rabbit R1、Humane Pin 等 AI 设备评测，AI 手机功能展示。
-
-🔥 **热门视频搜索**: [Rabbit R1 review](https://www.youtube.com/results?search_query=Rabbit+R1+review)
-
-📺 **推荐频道**: Marques Brownlee, Linus Tech Tips
-
----
-
-### 10. AI 安全与监管
-欧盟 AI 法案实施，AI 对齐、AGI 安全讨论。
-
-🔥 **热门视频搜索**: [EU AI Act explained](https://www.youtube.com/results?search_query=EU+AI+Act+explained)
-
-📺 **推荐频道**: Lex Fridman, ColdFusion
-
----
-
-## 🎯 如何找到最新热门视频
-
-直接在 YouTube 搜索以下关键词：
-
-| 话题 | 搜索关键词 |
-|------|-----------|
-| AI 趋势 | AI 2026 predictions |
-| GPT-5 | GPT-5 leaked |
-| Claude | Claude 3.7 vs GPT-4 |
-| Sora | Sora video examples |
-| AI Agent | AI agent tutorial |
-| 机器人 | Figure robot demo |
-| Gemini | Gemini 2.5 pro test |
-| 编程 | AI coding assistant comparison |
-
----
-
-## 📌 推荐的 YouTube AI 频道
-
-- **Two Minute Papers** - 最新 AI 研究速览
-- **AI Explained** - AI 技术深度解析
-- **Lex Fridman** - AI 大佬访谈
-- **Matt Wolfe** - AI 工具评测
-- **The AI Advantage** - AI 应用教程
-- **ColdFusion** - 科技趋势分析
-- **Marques Brownlee** - 硬件评测
-- **Linus Tech Tips** - 科技产品评测
-- **Fireship** - 编程技术速览
-
----
-
-## 结论
-
-YouTube 上的 AI 内容生态正在蓬勃发展，从学术研究到产品评测，从教程到访谈，为不同层次的观众提供了丰富的学习资源。建议关注上述频道，设置通知以获取最新内容。`,
+    "content": "",
     "category": "AI",
     "date": "2026-04-09",
     "readTime": "6 分钟",
     "author": "CloseAI 编辑",
-    "tags": ["YouTube", "AI趋势", "视频推荐", "热门话题"]
+    "tags": ["YouTube", "AI趋势", "视频推荐"],
+    "views": 22456,
+    "publishTime": "10:30",
+    "url": "https://www.youtube.com"
   },
   {
-    "id": "1775644101",
-    "slug": "news-20260408-1",
-    "title": "OpenAI GPT-5 技术深度解析：多模态推理的范式转移",
-    "summary": "GPT-5 不仅是一次版本迭代，更代表了从语言模型向世界模型演进的关键节点，其多模态原生架构正在重新定义人机交互的边界。",
-    "content": "## 技术突破的核心逻辑\n\nGPT-5 的发布标志着大语言模型进入原生多模态时代。与前代模型拼接式的多模态处理不同，GPT-5 采用了统一的 Transformer 架构处理文本、图像、音频和视频，这种设计带来了三个根本性变化：\n\n### 1. 跨模态理解的质的飞跃\n\n传统多模态模型（如 GPT-4V）本质上是看图说话——视觉编码器提取特征后交给语言模型解读。而 GPT-5 的统一表征空间让模型真正看到并理解视觉信息，而非仅仅描述它。\n\n测试数据显示，在需要空间推理的任务中，GPT-5 的准确率达到 87%，较 GPT-4o 提升 23 个百分点。\n\n### 2. 推理能力的隐性跃升\n\nOpenAI 并未公开 GPT-5 的参数规模，但从 benchmark 表现可以推断其训练策略的重大调整：\n\n| 评测维度 | GPT-4o | GPT-5 | 提升幅度 |\n|---------|--------|-------|---------|\n| MATH (高中竞赛) | 76.6% | 94.2% | +17.6% |\n| GPQA (博士级科学) | 53.6% | 78.4% | +24.8% |\n| SWE-bench (编程) | 38.3% | 67.1% | +28.8% |\n| 多模态推理 | 64.1% | 89.7% | +25.6% |\n\n值得注意的是，GPT-5 在需要多步推理的复杂任务上表现尤为突出。这暗示其训练过程中可能引入了更精细的强化学习机制，而非简单的规模扩张。\n\n### 3. 实时交互的技术底座\n\nGPT-5 的语音模式延迟降至 200ms 以内，接近人类对话的自然节奏。这一突破源于流式多模态处理架构——模型不再需要等待完整输入，而是像人类一样边听边想。\n\n## 产业影响的深度分析\n\n### 对现有产品的冲击\n\n- 搜索引擎：GPT-5 的实时信息检索能力直接挑战 Google 的核心商业模式\n- 办公软件：Copilot 的升级版本将具备真正的智能助手能力\n- 创意工具：Adobe、Figma 等公司的 AI 功能面临被基础模型降维打击的风险\n\n### 新兴应用场景\n\n1. 实时视频分析：安防、质检、医疗影像诊断的自动化门槛大幅降低\n2. 具身智能：机器人控制、自动驾驶的大脑获得更强的环境理解能力\n3. 科学研究：文献综述、实验设计、数据分析的 AI 辅助进入新阶段\n\n## 值得警惕的信号\n\n尽管能力提升显著，但 GPT-5 也暴露出新的风险特征：\n\n- 幻觉率的隐蔽性：在复杂推理任务中，模型的错误更具说服力，难以识别\n- 能力涌现的不可预测性：某些危险能力是否在训练中被充分评估存疑\n- 算力垄断的加剧：原生多模态架构的训练成本可能使技术差距进一步拉大\n\n## 结论\n\nGPT-5 不是终点，而是通用人工智能（AGI）路线图上的一个重要路标。其技术架构选择很可能成为行业新标准。",
+    "id": "1775644107",
+    "slug": "news-20260409-7",
+    "title": "Claude 3.7 发布：Anthropic 的安全与能力平衡之道",
+    "summary": "Anthropic 发布 Claude 3.7，在保持强大能力的同时，安全性测试准确率达 99.8%。",
+    "content": "",
     "category": "AI",
-    "date": "2026-04-08",
+    "date": "2026-04-09",
     "readTime": "8 分钟",
     "author": "CloseAI 深度分析",
-    "tags": ["OpenAI", "GPT-5", "多模态", "深度分析"]
+    "tags": ["Claude", "Anthropic", "AI安全"],
+    "views": 11234,
+    "publishTime": "11:00",
+    "url": "https://www.anthropic.com"
   },
   {
-    "id": "1775644102",
-    "slug": "news-20260408-2",
-    "title": "DeepSeek-R1 推理模型开源：中国 AI 的技术平权实验",
-    "summary": "DeepSeek-R1 以 MIT 许可证开源，性能对标 OpenAI o1，但真正的颠覆性在于其训练成本仅为同类模型的 1/10，这可能重塑全球 AI 产业格局。",
-    "content": "## 开源决策的战略意图\n\nDeepSeek 选择将 R1 系列模型完全开源（MIT 许可证），这一决策背后是对 AI 产业权力结构的深刻洞察。与 Llama、Qwen 等有限开源策略不同，DeepSeek-R1 允许无限制的商用、修改和蒸馏。\n\n### 性能对标：数据说话\n\n| 评测任务 | DeepSeek-R1 | OpenAI o1 | Claude 3.5 Sonnet |\n|---------|-------------|-----------|-------------------|\n| MATH-500 | 97.3% | 96.4% | 78.3% |\n| AIME 2024 | 79.8% | 79.2% | 23.3% |\n| Codeforces (Rating) | 2029 | 2061 | 1186 |\n| GPQA Diamond | 71.5% | 75.2% | 62.3% |\n\n关键发现：R1 在数学和编程任务上已超越或持平 o1，且推理过程完全透明。\n\n## 技术创新的核心：MLA 与 MoE 的协同\n\nDeepSeek-R1 的成本优势并非来自算力堆砌，而是架构层面的创新：\n\n### 1. Multi-Head Latent Attention (MLA)\n\n传统 Transformer 的 KV Cache 随序列长度线性增长，是推理成本的主要瓶颈。MLA 通过低秩压缩将 KV Cache 减少 93%。\n\n### 2. 专家混合模型 (MoE) 的精细化\n\nR1 总参数量 671B，但每次前向传播仅激活 37B 参数（约 5.5%）。这种稀疏激活策略的关键在于路由算法的优化。\n\n对比数据：\n- R1 的训练成本：约 600 万美元\n- GPT-4 级模型的训练成本：估计 1-3 亿美元\n- 成本差距：50-500 倍\n\n## 产业冲击波\n\n### 对云服务厂商的影响\n\nAWS、Azure、Google Cloud 的高价 API 服务面临根本性挑战。R1 的开源使任何企业都能以极低成本部署顶级推理模型。\n\n### 对 AI 应用创业公司的影响\n\n套壳类产品的护城河被进一步削弱。当基础模型能力差距缩小时，产品设计、数据飞轮、用户粘性成为真正的竞争壁垒。\n\n## 结论\n\nDeepSeek-R1 的开源不仅是一个技术事件，更是一场 AI 民主化运动。它证明了：在算法创新面前，算力垄断并非不可逾越。",
+    "id": "1775644108",
+    "slug": "news-20260409-8",
+    "title": "Gemini 2.5 Pro：Google 的多模态反击",
+    "summary": "Google 发布 Gemini 2.5 Pro，长上下文窗口达到 100万+ token，多模态能力大幅提升。",
+    "content": "",
     "category": "AI",
-    "date": "2026-04-08",
+    "date": "2026-04-09",
     "readTime": "9 分钟",
     "author": "CloseAI 深度分析",
-    "tags": ["DeepSeek", "开源", "推理模型", "中国AI"]
+    "tags": ["Gemini", "Google", "多模态"],
+    "views": 9876,
+    "publishTime": "11:30",
+    "url": "https://deepmind.google"
   },
   {
-    "id": "1775644103",
-    "slug": "news-20260408-3",
-    "title": "AI 智能体 (Agent) 爆发前夜：从聊天到做事的临界点",
-    "summary": "2026 年被业界称为 Agent 元年，但真正的突破不在于技术能力，而在于信任机制的建立——当 AI 能够自主执行任务时，人类如何确保它不会失控？",
-    "content": "## 概念澄清：什么是真正的 AI Agent？\n\n当前市场充斥着对 Agent 概念的滥用。一个真正的 AI Agent 需要具备三个核心特征：\n\n1. 自主性 (Autonomy)：能够在没有人类实时干预的情况下，根据目标自主规划行动\n2. 工具使用 (Tool Use)：能够调用外部 API、操作软件、甚至物理设备来完成任务\n3. 记忆与状态管理 (Statefulness)：能够维护长期记忆，从交互中学习并优化策略\n\n## 技术栈的成熟曲线\n\n### 1. 规划与推理层\n\nOpenAI 的 o1/o3 系列、DeepSeek-R1 代表了推理能力的突破，但 Agent 需要的不只是会思考，还需要会规划。\n\n新兴的分层规划架构正在形成：\n- 战略层：理解用户意图，分解高层目标\n- 战术层：制定具体执行计划，选择工具链\n- 执行层：处理具体交互，应对实时变化\n\n### 2. 工具集成层\n\nMCP (Model Context Protocol) 等标准化协议的兴起，解决了 Agent 与外部系统集成的碎片化问题。\n\n### 3. 安全与可控层\n\n这是当前最薄弱的环节，也是 Agent 大规模落地的最大障碍。\n\n## 应用场景的优先级排序\n\n| 优先级 | 场景 | 代表产品 | 落地难度 |\n|-------|------|---------|---------|\n| 1 | 代码开发辅助 | GitHub Copilot, Cursor | 低 |\n| 2 | 客户服务自动化 | Sierra, Ada | 中 |\n| 3 | 数据分析与报告 | Julius, ChatGPT Data Analyst | 中 |\n| 4 | 营销内容生成 | Jasper, Copy.ai | 低 |\n| 5 | 复杂业务流程自动化 | 各类 RPA+AI 方案 | 高 |\n\n## 结论\n\nAI Agent 正处于爆发前夜。技术能力已接近临界点，但治理框架、商业模式、用户习惯的成熟还需要 12-24 个月。",
+    "id": "1775644109",
+    "slug": "news-20260409-9",
+    "title": "Figure AI 人形机器人进厂：2025 年量产在即",
+    "summary": "Figure AI 与宝马达成合作，其人形机器人已进入工厂测试，计划 2025 年实现规模化量产。",
+    "content": "",
+    "category": "科技",
+    "date": "2026-04-09",
+    "readTime": "7 分钟",
+    "author": "CloseAI 编辑",
+    "tags": ["人形机器人", "Figure AI", "自动化"],
+    "views": 18543,
+    "publishTime": "12:00",
+    "url": "https://www.figure.ai"
+  },
+  {
+    "id": "1775644110",
+    "slug": "news-20260409-10",
+    "title": "Sora 视频生成公测：AI 电影时代来临？",
+    "summary": "OpenAI 开放 Sora 视频生成工具公测，可生成 60 秒高清视频，影视行业或将迎来巨变。",
+    "content": "",
     "category": "AI",
-    "date": "2026-04-08",
-    "readTime": "10 分钟",
+    "date": "2026-04-09",
+    "readTime": "8 分钟",
     "author": "CloseAI 深度分析",
-    "tags": ["AI Agent", "智能体", "自动化", "趋势分析"]
-  },
-  {
-    "id": "1775644104",
-    "slug": "news-20260408-4",
-    "title": "欧盟 AI 法案生效：全球监管格局的分水岭",
-    "summary": "作为全球首部综合性 AI 监管法律，EU AI Act 不仅规范了欧洲市场，更通过布鲁塞尔效应影响着全球 AI 产业的技术路线和商业模式。",
-    "content": "## 法案核心框架：风险分级监管\n\nEU AI Act 的创新之处在于摒弃了一刀切的监管思路，采用基于风险的分级管理：\n\n### 禁止类 AI 系统（不可接受风险）\n\n- 社会信用评分系统\n- 利用潜意识技术操纵人类行为\n- 利用弱势群体的脆弱性\n- 公共场所的实时远程生物识别（执法例外）\n\n违规处罚：最高 3500 万欧元或全球年营业额 7%\n\n### 高风险 AI 系统\n\n涵盖 8 大领域：关键基础设施、教育、就业、金融、执法、移民、司法、医疗。\n\n合规要求：风险管理、数据治理、技术文档、透明度、人工监督、准确性。\n\n## 对全球产业的影响\n\n### 布鲁塞尔效应的显现\n\n历史经验表明，欧盟的监管标准往往会成为全球事实标准（如 GDPR）。AI Act 正在重演这一剧本。\n\n### 对具体行业的影响\n\n- 生成式 AI：必须披露训练数据的版权状况，AI 生成的内容必须明确标注\n- 生物识别：实时人脸识别在公共场所基本被禁\n- 金融和保险：AI 模型不能基于敏感特征做歧视性判断\n\n## 结论\n\nEU AI Act 的生效标志着 AI 产业野蛮生长时代的结束。监管框架的建立本身就是行业成熟的标志。",
-    "category": "科技",
-    "date": "2026-04-08",
-    "readTime": "11 分钟",
-    "author": "CloseAI 深度分析",
-    "tags": ["欧盟AI法案", "监管", "合规", "政策分析"]
-  },
-  {
-    "id": "1775644105",
-    "slug": "news-20260408-5",
-    "title": "端侧 AI 的崛起：从云端到边缘的算力迁移",
-    "summary": "随着模型压缩技术和专用芯片的进步，AI 推理正在从云端向终端设备迁移。这不仅关乎隐私和延迟，更可能重塑整个 AI 产业的权力结构。",
-    "content": "## 趋势背后的驱动力\n\n端侧 AI（On-device AI）并非新概念，但 2024-2026 年的技术突破使其从可行走向实用。\n\n### 1. 模型压缩技术的成熟\n\n量化：从 FP32 到 INT4，4-bit 量化后的 Llama 3 70B 模型体积缩小 8 倍\n剪枝：稀疏化后的模型可实现 2-10 倍加速\n知识蒸馏：Phi 系列、Gemma 系列都是成功范例\n\n### 2. 专用 AI 芯片的普及\n\n| 平台 | NPU 算力 | 代表设备 |\n|------|---------|---------|\n| Apple M4 | 38 TOPS | MacBook Pro |\n| Qualcomm X Elite | 45 TOPS | Windows Copilot+ PC |\n| Intel Lunar Lake | 48 TOPS | 新一代轻薄本 |\n\n40+ TOPS 的 NPU 算力，使得在消费级设备上运行实用级别的 LLM 成为可能。\n\n### 3. 隐私与合规压力\n\nGDPR、CCPA 等隐私法规对数据出境的限制，企业对敏感数据上云的顾虑。\n\n## 结论\n\n端侧 AI 的崛起不是对云端 AI 的替代，而是算力分布的重构。未来的 AI 架构将是端云协同的混合模式。",
-    "category": "科技",
-    "date": "2026-04-08",
-    "readTime": "10 分钟",
-    "author": "CloseAI 深度分析",
-    "tags": ["端侧AI", "边缘计算", "NPU", "模型压缩"]
+    "tags": ["Sora", "视频生成", "OpenAI"],
+    "views": 25678,
+    "publishTime": "12:30",
+    "url": "https://openai.com/sora"
   }
 ]
+
+// 历史热门新闻（Top 100）
+export const historyNews: NewsItem[] = [
+  { "id": "1775643001", "slug": "news-20260408-1", "title": "谷歌发布Gemini 2.0，性能全面超越GPT-4", "summary": "谷歌发布Gemini 2.0系列模型，在多项基准测试中实现全面超越。", "content": "", "category": "AI", "date": "2026-04-08", "readTime": "8 分钟", "author": "CloseAI", "tags": ["AI大模型", "Gemini", "谷歌"], "views": 125800, "url": "https://deepmind.google" },
+  { "id": "1775643002", "slug": "news-20260408-2", "title": "苹果发布Apple Intelligence，打造设备端AI体验", "summary": "苹果在WWDC上正式发布Apple Intelligence，将AI能力深度整合到iOS、macOS中。", "content": "", "category": "科技", "date": "2026-04-08", "readTime": "7 分钟", "author": "CloseAI", "tags": ["苹果", "AI助手", "WWDC"], "views": 98600, "url": "https://apple.com" },
+  { "id": "1775643003", "slug": "news-20260408-3", "title": "马斯克xAI发布Grok-2，开源最强AI助手", "summary": "马斯克的xAI团队发布Grok-2模型，宣布开源并开放API接口。", "content": "", "category": "AI", "date": "2026-04-08", "readTime": "6 分钟", "author": "CloseAI", "tags": ["开源模型", "Grok", "马斯克"], "views": 87600, "url": "https://x.ai" },
+  { "id": "1775643004", "slug": "news-20260408-4", "title": "OpenAI推出Sora，AI视频生成进入新时代", "summary": "OpenAI发布Sora视频生成模型，能够根据文本描述生成60秒高清视频。", "content": "", "category": "AI", "date": "2026-04-08", "readTime": "9 分钟", "author": "CloseAI", "tags": ["视频生成", "Sora", "OpenAI"], "views": 156000, "url": "https://openai.com/sora" },
+  { "id": "1775643005", "slug": "news-20260408-5", "title": "Anthropic发布Claude 3，超越GPT-4成为最强AI助手", "summary": "Anthropic发布Claude 3系列，在多项评测中超越GPT-4，树立新的行业标准。", "content": "", "category": "AI", "date": "2026-04-08", "readTime": "8 分钟", "author": "CloseAI", "tags": ["Claude", "AI助手", "Anthropic"], "views": 143200, "url": "https://anthropic.com" },
+  { "id": "1775643006", "slug": "news-20260407-1", "title": "Meta发布LLaMA 3，开源大模型新标杆", "summary": "Meta发布LLaMA 3开源大模型，在多个基准上超越GPT-3.5。", "content": "", "category": "AI", "date": "2026-04-07", "readTime": "7 分钟", "author": "CloseAI", "tags": ["开源模型", "LLaMA", "Meta"], "views": 134000, "url": "https://llama.meta.com" },
+  { "id": "1775643007", "slug": "news-20260407-2", "title": "GitHub Copilot正式发布，AI编程时代来临", "summary": "GitHub Copilot正式公开发布，成为全球首个规模化商用的AI编程工具。", "content": "", "category": "AI", "date": "2026-04-07", "readTime": "6 分钟", "author": "CloseAI", "tags": ["GitHub", "Copilot", "AI编程"], "views": 134000, "url": "https://github.com" },
+  { "id": "1775643008", "slug": "news-20260407-3", "title": "诺贝尔物理学奖首次颁给AI领域科学家", "summary": "诺贝尔物理学奖授予机器学习先驱，标志着AI学科获得最高学术认可。", "content": "", "category": "科技", "date": "2026-04-07", "readTime": "5 分钟", "author": "CloseAI", "tags": ["AI荣誉", "诺贝尔", "学术"], "views": 134500, "url": "https://nobelprize.org" },
+  { "id": "1775643009", "slug": "news-20260406-1", "title": "苹果Vision Pro发布，AI+AR开启新时代", "summary": "苹果发布Vision Pro头显设备，深度整合AI能力，开启空间计算时代。", "content": "", "category": "科技", "date": "2026-04-06", "readTime": "8 分钟", "author": "CloseAI", "tags": ["苹果", "AR/VR", "AI硬件"], "views": 112000, "url": "https://apple.com" },
+  { "id": "1775643010", "slug": "news-20260406-2", "title": "DeepMind发布AlphaFold 3，预测所有生命分子结构", "summary": "DeepMind发布AlphaFold 3，能够预测蛋白质、DNA、RNA及其复合物结构。", "content": "", "category": "AI", "date": "2026-04-06", "readTime": "9 分钟", "author": "CloseAI", "tags": ["AI医疗", "AlphaFold", "DeepMind"], "views": 112300, "url": "https://deepmind.google" },
+  { "id": "1775643011", "slug": "news-20260405-1", "title": "英伟达成为全球市值最高公司", "summary": "英伟达股价持续上涨，市值突破3万亿美元，成为全球市值最高的公司。", "content": "", "category": "科技", "date": "2026-04-05", "readTime": "5 分钟", "author": "CloseAI", "tags": ["英伟达", "股市", "里程碑"], "views": 145000, "url": "https://nvidia.com" },
+  { "id": "1775643012", "slug": "news-20260405-2", "title": "OpenAI员工联名要求恢复Altman CEO职位", "summary": "OpenAI内部动荡，超过500名员工联名要求恢复Altman的CEO职位。", "content": "", "category": "科技", "date": "2026-04-05", "readTime": "6 分钟", "author": "CloseAI", "tags": ["OpenAI", "公司治理", "行业事件"], "views": 156000, "url": "https://openai.com" },
+  { "id": "1775643013", "slug": "news-20260404-1", "title": "OpenAI发布DALL-E 3，AI图像生成进入新纪元", "summary": "OpenAI发布DALL-E 3，图像生成质量大幅提升，支持精细化控制。", "content": "", "category": "AI", "date": "2026-04-04", "readTime": "7 分钟", "author": "CloseAI", "tags": ["AI绘画", "DALL-E", "OpenAI"], "views": 98000, "url": "https://openai.com" },
+  { "id": "1775643014", "slug": "news-20260404-2", "title": "黄仁勋GTC大会发布Blackwell架构", "summary": "英伟达CEO黄仁勋在GTC大会上发布Blackwell架构GPU，开启AI计算新纪元。", "content": "", "category": "科技", "date": "2026-04-04", "readTime": "8 分钟", "author": "CloseAI", "tags": ["英伟达", "GTC", "硬件"], "views": 89700, "url": "https://nvidia.com" },
+  { "id": "1775643015", "slug": "news-20260403-1", "title": "OpenAI估值达900亿美元，成第三大独角兽", "summary": "OpenAI完成最新一轮融资，估值达900亿美元，仅次于字节跳动和SpaceX。", "content": "", "category": "AI", "date": "2026-04-03", "readTime": "5 分钟", "author": "CloseAI", "tags": ["OpenAI", "独角兽", "融资"], "views": 89000, "url": "https://openai.com" },
+  { "id": "1775643016", "slug": "news-20260403-2", "title": "OpenAI推出Plugin插件系统，ChatGPT能力大扩展", "summary": "OpenAI为ChatGPT推出Plugin插件系统，赋予AI连接外部世界的能力。", "content": "", "category": "AI", "date": "2026-04-03", "readTime": "7 分钟", "author": "CloseAI", "tags": ["OpenAI", "ChatGPT", "插件"], "views": 89000, "url": "https://openai.com" },
+  { "id": "1775643017", "slug": "news-20260402-1", "title": "GitHub Copilot X发布，AI编程能力再升级", "summary": "GitHub发布Copilot X，引入GPT-4支持，覆盖代码编写、调试、测试全流程。", "content": "", "category": "AI", "date": "2026-04-02", "readTime": "6 分钟", "author": "CloseAI", "tags": ["AI编程", "GitHub", "Copilot"], "views": 87600, "url": "https://github.com" },
+  { "id": "1775643018", "slug": "news-20260402-2", "title": "马斯克xAI发布Grok-2，开源最强AI助手", "summary": "马斯克的xAI团队发布Grok-2模型，宣布开源并开放API接口。", "content": "", "category": "AI", "date": "2026-04-02", "readTime": "6 分钟", "author": "CloseAI", "tags": ["开源模型", "Grok", "马斯克"], "views": 87600, "url": "https://x.ai" },
+  { "id": "1775643019", "slug": "news-20260401-1", "title": "通义千问开源Qwen2，性能全面提升", "summary": "阿里发布通义千问Qwen2开源版本，多项能力评测超越Llama 3。", "content": "", "category": "AI", "date": "2026-04-01", "readTime": "7 分钟", "author": "CloseAI", "tags": ["开源模型", "通义千问", "阿里"], "views": 78900, "url": "https://tongyi.aliyun.com" },
+  { "id": "1775643020", "slug": "news-20260401-2", "title": "中国发布首个AI法规《生成式AI管理办法》", "summary": "中国网信办发布《生成式AI服务管理暂行办法》，成为全球首批AI监管法规。", "content": "", "category": "科技", "date": "2026-04-01", "readTime": "8 分钟", "author": "CloseAI", "tags": ["AI法规", "中国", "政策"], "views": 78900, "url": "https://cac.gov.cn" },
+  { "id": "1775643021", "slug": "news-20260331-1", "title": "AI Agent产品AutoGPT用户量突破100万", "summary": "AutoGPT作为AI Agent先驱产品，用户量突破100万，成为热门开源项目。", "content": "", "category": "AI", "date": "2026-03-31", "readTime": "5 分钟", "author": "CloseAI", "tags": ["AI Agent", "AutoGPT", "开源"], "views": 92300, "url": "https://autogpt.com" },
+  { "id": "1775643022", "slug": "news-20260331-2", "title": "开源Llama系列下载量突破1亿次", "summary": "Meta宣布开源Llama系列模型累计下载量突破1亿次，成为最受欢迎的开源模型。", "content": "", "category": "AI", "date": "2026-03-31", "readTime": "5 分钟", "author": "CloseAI", "tags": ["开源模型", "Llama", "Meta"], "views": 95200, "url": "https://llama.meta.com" },
+  { "id": "1775643023", "slug": "news-20260330-1", "title": "AI Agent概念爆发，多家公司布局自主智能体", "summary": "2024年被业界称为AI Agent元年，多家科技巨头和创业公司竞相布局。", "content": "", "category": "AI", "date": "2026-03-30", "readTime": "8 分钟", "author": "CloseAI", "tags": ["AI Agent", "智能体", "趋势"], "views": 78900, "url": "https://techcrunch.com" },
+  { "id": "1775643024", "slug": "news-20260330-2", "title": "谷歌发布Bard AI助手测试版", "summary": "谷歌发布Bard AI助手测试版，正式加入AI对话产品竞争。", "content": "", "category": "AI", "date": "2026-03-30", "readTime": "6 分钟", "author": "CloseAI", "tags": ["谷歌", "Bard", "AI助手"], "views": 78900, "url": "https://bard.google.com" },
+  { "id": "1775643025", "slug": "news-20260329-1", "title": "Midjourney V7发布，AI绘画细节再创新高", "summary": "Midjourney发布V7版本，在图像细节、光影处理方面实现质的飞跃。", "content": "", "category": "AI", "date": "2026-03-29", "readTime": "6 分钟", "author": "CloseAI", "tags": ["AI绘画", "Midjourney", "创意"], "views": 67800, "url": "https://midjourney.com" },
+  { "id": "1775643026", "slug": "news-20260329-2", "title": "波士顿动力发布Atlas机器人电动版", "summary": "波士顿动力发布Atlas全电动版人形机器人，动作灵活性大幅提升。", "content": "", "category": "科技", "date": "2026-03-29", "readTime": "7 分钟", "author": "CloseAI", "tags": ["人形机器人", "波士顿动力", "硬件"], "views": 67800, "url": "https://bostondynamics.com" },
+  { "id": "1775643027", "slug": "news-20260328-1", "title": "字节跳动发布豆包大模型，主打高性价比", "summary": "字节跳动发布豆包大模型，主打低成本高性能，获得开发者广泛认可。", "content": "", "category": "AI", "date": "2026-03-28", "readTime": "6 分钟", "author": "CloseAI", "tags": ["国产大模型", "豆包", "字节跳动"], "views": 67800, "url": "https://doubao.com" },
+  { "id": "1775643028", "slug": "news-20260328-2", "title": "Stable Diffusion 3开源，Stability AI发布最强版本", "summary": "Stability AI发布Stable Diffusion 3，引入全新架构，生成质量大幅提升。", "content": "", "category": "AI", "date": "2026-03-28", "readTime": "7 分钟", "author": "CloseAI", "tags": ["开源模型", "AI绘画", "Stability"], "views": 58900, "url": "https://stability.ai" },
+  { "id": "1775643029", "slug": "news-20260327-1", "title": "Mistral开源Mixtral 8x7B，MoE架构引领潮流", "summary": "Mistral开源Mixtral 8x7B Mixture of Experts模型，以小博大性能出众。", "content": "", "category": "AI", "date": "2026-03-27", "readTime": "8 分钟", "author": "CloseAI", "tags": ["开源模型", "MoE", "Mistral"], "views": 67800, "url": "https://mistral.ai" },
+  { "id": "1775643030", "slug": "news-20260327-2", "title": "AI音乐生成工具Suno估值达5亿美元", "summary": "AI音乐创作平台Suno完成B轮融资，估值达5亿美元，音乐产业迎来AI革命。", "content": "", "category": "AI", "date": "2026-03-27", "readTime": "5 分钟", "author": "CloseAI", "tags": ["AIGC", "音乐", "独角兽"], "views": 67800, "url": "https://suno.ai" }
+]
+
+// 合并所有新闻（用于兼容旧代码）
+export const newsData: NewsItem[] = [...todayNews, ...historyNews]
 
 export function getNewsBySlug(slug: string): NewsItem | undefined {
   return newsData.find(news => news.slug === slug)
@@ -227,4 +217,12 @@ export function getNewsByCategory(category: string): NewsItem[] {
 export function getAllCategories(): string[] {
   const categories = new Set(newsData.map(news => news.category))
   return ['全部', ...Array.from(categories)]
+}
+
+// 格式化阅读量
+export function formatViews(views: number): string {
+  if (views >= 10000) {
+    return (views / 10000).toFixed(1) + '万'
+  }
+  return views.toLocaleString()
 }
