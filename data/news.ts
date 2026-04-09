@@ -13,6 +13,147 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
+    "id": "1775644106",
+    "slug": "news-20260409-1",
+    "title": "YouTube 十大热门 AI 话题盘点：2026年最受关注的人工智能趋势",
+    "summary": "从 GPT-5 到 AI Agent，从人形机器人到视频生成，梳理 YouTube 上最火的 10 个 AI 话题，附视频链接直达精彩内容。",
+    "content": `## YouTube 上最火的 10 个 AI 话题
+
+以下是 2026 年 YouTube 上最受关注的 AI 话题，按热度排序：
+
+---
+
+### 1. GPT-5 / 下一代大模型发布
+OpenAI 下一代模型的预测和泄露持续引发热议，多模态原生架构成为焦点。
+
+🔥 **热门视频搜索**: [GPT-5 predictions 2026](https://www.youtube.com/results?search_query=GPT-5+predictions+2026)
+
+📺 **推荐频道**: AI Explained, The AI Advantage
+
+---
+
+### 2. AI Agent 自主代理
+AutoGPT、Devin 等自主编程代理展示 AI 独立完成复杂任务的能力。
+
+🔥 **热门视频搜索**: [AI Agent tutorial 2026](https://www.youtube.com/results?search_query=AI+Agent+tutorial+2026)
+
+📺 **推荐频道**: The AI Advantage, Matt Wolfe
+
+---
+
+### 3. Sora 视频生成
+OpenAI Sora 的惊人视频生成能力，与 Runway、Pika 等工具的对比评测。
+
+🔥 **热门视频搜索**: [Sora AI video examples](https://www.youtube.com/results?search_query=Sora+AI+video+examples)
+
+📺 **推荐频道**: Two Minute Papers, AI Explained
+
+---
+
+### 4. 人形机器人
+Figure AI、Tesla Optimus、Boston Dynamics 的最新进展。
+
+🔥 **热门视频搜索**: [Humanoid robot 2026](https://www.youtube.com/results?search_query=Humanoid+robot+2026)
+
+📺 **推荐频道**: ColdFusion, Lex Fridman
+
+---
+
+### 5. Claude 3.7 / Anthropic 新功能
+Claude 的代码能力和推理能力展示，与 GPT-4 的对比评测。
+
+🔥 **热门视频搜索**: [Claude 3.7 vs GPT-4](https://www.youtube.com/results?search_query=Claude+3.7+vs+GPT-4)
+
+📺 **推荐频道**: AI Explained, The AI Advantage
+
+---
+
+### 6. Gemini 2.5 Pro
+Google 最新多模态模型的突破，长上下文窗口（100万+ token）。
+
+🔥 **热门视频搜索**: [Gemini 2.5 Pro test](https://www.youtube.com/results?search_query=Gemini+2.5+Pro+test)
+
+📺 **推荐频道**: Matt Wolfe, AI Explained
+
+---
+
+### 7. AI 编程助手
+Cursor、GitHub Copilot、Windsurf 等工具的实际使用评测。
+
+🔥 **热门视频搜索**: [Cursor AI tutorial](https://www.youtube.com/results?search_query=Cursor+AI+tutorial)
+
+📺 **推荐频道**: The AI Advantage, Fireship
+
+---
+
+### 8. AI 音乐生成
+Suno、Udio 等音乐生成工具的评测和教程。
+
+🔥 **热门视频搜索**: [Suno AI music tutorial](https://www.youtube.com/results?search_query=Suno+AI+music+tutorial)
+
+📺 **推荐频道**: Matt Wolfe, AI Explained
+
+---
+
+### 9. AI 硬件设备
+Rabbit R1、Humane Pin 等 AI 设备评测，AI 手机功能展示。
+
+🔥 **热门视频搜索**: [Rabbit R1 review](https://www.youtube.com/results?search_query=Rabbit+R1+review)
+
+📺 **推荐频道**: Marques Brownlee, Linus Tech Tips
+
+---
+
+### 10. AI 安全与监管
+欧盟 AI 法案实施，AI 对齐、AGI 安全讨论。
+
+🔥 **热门视频搜索**: [EU AI Act explained](https://www.youtube.com/results?search_query=EU+AI+Act+explained)
+
+📺 **推荐频道**: Lex Fridman, ColdFusion
+
+---
+
+## 🎯 如何找到最新热门视频
+
+直接在 YouTube 搜索以下关键词：
+
+| 话题 | 搜索关键词 |
+|------|-----------|
+| AI 趋势 | AI 2026 predictions |
+| GPT-5 | GPT-5 leaked |
+| Claude | Claude 3.7 vs GPT-4 |
+| Sora | Sora video examples |
+| AI Agent | AI agent tutorial |
+| 机器人 | Figure robot demo |
+| Gemini | Gemini 2.5 pro test |
+| 编程 | AI coding assistant comparison |
+
+---
+
+## 📌 推荐的 YouTube AI 频道
+
+- **Two Minute Papers** - 最新 AI 研究速览
+- **AI Explained** - AI 技术深度解析
+- **Lex Fridman** - AI 大佬访谈
+- **Matt Wolfe** - AI 工具评测
+- **The AI Advantage** - AI 应用教程
+- **ColdFusion** - 科技趋势分析
+- **Marques Brownlee** - 硬件评测
+- **Linus Tech Tips** - 科技产品评测
+- **Fireship** - 编程技术速览
+
+---
+
+## 结论
+
+YouTube 上的 AI 内容生态正在蓬勃发展，从学术研究到产品评测，从教程到访谈，为不同层次的观众提供了丰富的学习资源。建议关注上述频道，设置通知以获取最新内容。`,
+    "category": "AI",
+    "date": "2026-04-09",
+    "readTime": "6 分钟",
+    "author": "CloseAI 编辑",
+    "tags": ["YouTube", "AI趋势", "视频推荐", "热门话题"]
+  },
+  {
     "id": "1775644101",
     "slug": "news-20260408-1",
     "title": "OpenAI GPT-5 技术深度解析：多模态推理的范式转移",
